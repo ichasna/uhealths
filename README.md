@@ -1,62 +1,25 @@
-# Template Proyek Django PBP
+# Nama Anggota #
+Kelompok PBP - B09
+1. Farras Hafizhudin Indra Wijaya - 2106652682
+2. Jihan Syafa Kamila - 2106751303
+3. Rikza Kurnia Almujtaba Lubis - 2106701293
+4. Syarifah Nur Amalia - 2106751272
+5. Yoozu Abiyyu Verisson – 2106751064
+ 
+**HerokuApp Link**
+| [uHealths](https://uhealths.herokuapp.com/)
+ 
+# Tentang Aplikasi #
+Topik kami kembali ke salah satu topik G20, yaitu Kesehatan Global, yang berupaya mendidik masyarakat tentang kesehatan global dan dampaknya terhadap dunia. Ide kami berkembang pesat di situs web kesehatan dan kebugaran online yang menawarkan wawasan tentang kesehatan dan kebugaran terkini, serta konten yang membantu pengguna kami untuk dapat menjalani hidup yang lebih sehat. Menawarkan kumpulan informasi, artikel, dan sumber daya yang memberikan informasi tentang berbagai masalah kesehatan yang terjadi di dunia.
+ 
+# Moduls #
+- Masalah kesehatan infografis masing-masing dengan bagiannya masing-masing
+- Status kesehatan seseorang dengan akses ke pelacak asupan harian serta pembanding
+- Hitung dan perbarui status kesehatan Anda secara umum untuk sepenuhnya memanfaatkan dan memaksimalkan kebutuhan tubuh Anda
+- Pertanyaan yang sering diajukan dengan penjelasan terperinci
+- Mencari jawaban di dalam pengguna lain dari forum kesehatan kami
+ 
+# Peran User #
+- [x] Periksa status kesehatan diri sendiri, temukan berita & informasi tentang gaya hidup sehat serta kredibilitas kandungan makanan dan manfaatnya
+- [x] Pelatih Pribadi, lacak pertumbuhan asupan harian klien dan dapatkan akses ke proporsi yang disarankan dari saran kesehatan
 
-Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
-
-*Read this in other languages: [Indonesian](README.md), [English](README.en.md)*
-
-## Pendahuluan
-
-Repositori ini merupakan sebuah template yang dirancang untuk membantu mahasiswa yang sedang mengambil mata kuliah Pemrograman Berbasis Platform (CSGE602022) mengetahui struktur sebuah proyek aplikasi Django serta file dan konfigurasi yang penting dalam berjalannya aplikasi. Kamu dapat dengan bebas menyalin isi dari repositori ini atau memanfaatkan repositori ini sebagai pembelajaran sekaligus awalan dalam membuat sebuah proyek Django.
-
-## Cara Menggunakan
-
-Apabila kamu ingin menggunakan repositori ini sebagai repositori awalan yang nantinya akan kamu modifikasi:
-
-1. Buka laman GitHub repositori templat kode, lalu klik tombol "**Use this template**"
-   untuk membuat salinan repositori ke dalam akun GitHub milikmu.
-2. Buka laman GitHub repositori yang dibuat dari templat, lalu gunakan perintah
-   `git clone` untuk menyalin repositorinya ke suatu lokasi di dalam sistem
-   berkas (_filesystem_) komputermu:
-
-   ```shell
-   git clone <URL ke repositori di GitHub> <path ke suatu lokasi di filesystem>
-   ```
-3. Masuk ke dalam repositori yang sudah di-_clone_ dan jalankan perintah berikut
-   untuk menyalakan _virtual environment_:
-
-   ```shell
-   python -m venv env
-   ```
-4. Nyalakan environment dengan perintah berikut:
-
-   ```shell
-   # Windows
-   .\env\Scripts\activate
-   # Linux/Unix, e.g. Ubuntu, MacOS
-   source env/bin/activate
-   ```
-5. Install dependencies yang dibutuhkan untuk menjalankan aplikasi dengan perintah berikut:
-
-   ```shell
-   pip install -r requirements.txt
-   ```
-
-6. Jalankan aplikasi Django menggunakan server pengembangan yang berjalan secara
-   lokal:
-
-   ```shell
-   python manage.py runserver
-   ```
-7. Bukalah `http://localhost:8000` pada browser favoritmu untuk melihat apakah aplikasi sudah berjalan dengan benar.
-
-## Contoh Deployment 
-
-Pada template ini, deployment dilakukan dengan memanfaatkan GitHub Actions sebagai _runner_ dan Heroku sebagai platform Hosting aplikasi. 
-
-Untuk melakukan deployment, kamu dapat melihat instruksi yang ada pada [Tutorial 0](https://pbp-fasilkom-ui.github.io/ganjil-2023/assignments/tutorial/tutorial-0).
-
-Untuk contoh aplikasi Django yang sudah di deploy, dapat kamu akses di [https://django-pbp-template.herokuapp.com/](https://django-pbp-template.herokuapp.com/)
-
-## Credits
-
-Template ini dibuat berdasarkan [PBP Ganjil 2021](https://gitlab.com/PBP-2021/pbp-lab) yang ditulis oleh Tim Pengajar Pemrograman Berbasis Platform 2021 ([@prakashdivyy](https://gitlab.com/prakashdivyy)) dan [django-template-heroku](https://github.com/laymonage/django-template-heroku) yang ditulis oleh [@laymonage, et al.](https://github.com/laymonage). Template ini dirancang sedemikian rupa sehingga mahasiswa dapat menjadikan template ini sebagai awalan serta acuan dalam mengerjakan tugas maupun dalam berkarya.
