@@ -1,3 +1,5 @@
+from django.contrib.auth import get_user_model
+UserProfile = get_user_model()
 import datetime, json
 from django.urls import reverse
 from django.core import serializers
@@ -7,34 +9,21 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from uhealths.models import UserProfile, UserProfileManger
+from uhealths.models import UserProfile,UserProfileManger
 from uhealths.forms import UserProfileCreationForm
+
 
 @login_required(login_url='/uhealths/login/')
 def landingpage(request):
     return render(request, 'landingpage.html')
 
 def register(request):
-    #form = UserCreationForm()
     form  = UserProfileCreationForm()
-
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = UserProfileCreationForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Akun telah berhasil dibuat!')
-       
-        #user = UserProfile()
-        #user.objects.create_user()
-        #user_login = authenticate()
-        
-        
-        #if form.is_valid():
-            #form.save()
-
-            
-            
-            #messages.success(request, 'Akun berhasil dibuat!')
             return redirect('uhealths:login')
     
     context = {'form':form}
