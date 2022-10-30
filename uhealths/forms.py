@@ -1,40 +1,35 @@
-from dataclasses import Field
+from tkinter import Widget
+from uhealths.models import HealthStats
 from django import forms
-from django import forms  
-from django.contrib.auth.models import User  
-from django.contrib.auth.forms import UserCreationForm  
-from django.core.exceptions import ValidationError  
-from django.forms.fields import EmailField  
-from django.forms.forms import Form
-from django.contrib.auth import get_user_model
-UserProfile = get_user_model()
+class HealthStatsForm(forms.ModelForm):
+    class Meta:
+        model = HealthStats
+        exclude = ('bmi','bmr')
+        #fields = ['text']
+        CHOICES=[('Male','Male'),
+         ('Female','Female')]
+        widgets ={
+            'gender': forms.RadioSelect(choices= CHOICES,
+            attrs={
+            'id': 'gender', 
+            'name': 'gender',
 
-from uhealths.models import UserProfile  
-class UserProfileCreationForm(UserCreationForm):
-    username = forms.CharField(label='username', min_length=5, max_length=150)  
-     
-    password1 = forms.CharField(label='password', widget=forms.PasswordInput)  
-    password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)  
-  
-    def username_clean(self):  
-        username = self.cleaned_data['username'].lower()  
-        new = UserProfile.objects.filter(username = username)  
-        if new.count():  
-            raise ValidationError("User Already Exist")  
-        return username  
-  
-    def clean_password2(self):  
-        password1 = self.cleaned_data['password1']  
-        password2 = self.cleaned_data['password2']  
-  
-        if password1 and password2 and password1 != password2:  
-            raise ValidationError("Password don't match")  
-        return password2  
-  
-    def save(self, commit = True):  
-        user = UserProfile.objects.create_user(  
-            self.cleaned_data['username'],  
-            self.cleaned_data['email'],  
-            self.cleaned_data['password1']  
-        )  
-        return user  
+            }),
+            'weight': forms.IntegerField(attrs={
+                'id':'weight',
+                'name': 'weight',
+                
+            }),
+            'height': forms.IntegerField(attrs={
+                'id': 'height',
+                'name': 'height',
+            }),
+            'age': forms.IntegerField(attrs={
+                'id': 'age',
+                'name': 'age',
+
+            })
+        }
+        
+        gender = forms.CharField(widget=forms.RadioSelect(choices=CHOICES))
+      
